@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.killjl.guanli.DAO.StdMsgDao">
+    <sql id="table">stdmsg</sql>
+    <sql id="selectFields">id,name,sex,grade,home,userid,college,major,point,phone
+    </sql>
+    <select id="selectStdMsg" resultType="com.killjl.guanli.model.Stdmsg">
+        SELECT
+        <include refid="selectFields"/>
+        FROM
+        <include refid="table"/>
+		
+        WHERE id > 0
+		
+		<if test="userid != 0">
+			AND userid = #{userid,jdbcType=NUMERIC}
+		</if>
+		
+        <if test="name != null">
+            AND name like concat('%',concat( #{name,jdbcType=VARCHAR},'%'))
+        </if>
+		
+        <if test="sex != null">
+            AND sex like concat('%',concat( #{sex,jdbcType=VARCHAR},'%'))
+        </if>
+		
+		<if test="grade != null">
+            AND grade like concat('%',concat( #{grade,jdbcType=VARCHAR},'%'))
+        </if>
+		
+        <if test="home != null">
+            AND home like concat('%',concat( #{home,jdbcType=VARCHAR},'%'))
+        </if>
+		
+        <if test="college != null">
+            AND college like concat('%',concat( #{college,jdbcType=VARCHAR},'%'))
+        </if>
+		
+		<if test="major != null">
+            AND major like concat('%',concat( #{major,jdbcType=VARCHAR},'%'))
+        </if>
+		
+		<if test="phone != 0">
+            AND phone = #{phone,jdbcType=NUMERIC}
+        </if>
+		
+		
+        ORDER BY id
+		
+    </select>
+</mapper>

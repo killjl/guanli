@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.killjl.guanli.DAO.PointDao">
+    <sql id="table">point</sql>
+    <sql id="selectFields">id,stdid,sum,major,minor,art,economy,literature,language,sport,innovation
+    </sql>
+    <update id="updatePoint" parameterType="com.killjl.guanli.model.Point">
+        UPDATE
+        <include refid="table"/>
+		
+		<set>
+				sum = #{sum,jdbcType=INTEGER}
+			<if test="major != 0" >
+				,major = #{major,jdbcType=INTEGER}
+			</if>
+			<if test="minor != 0" >
+				,minor = #{minor,jdbcType=INTEGER}
+			</if>
+			<if test="art != 0" >
+				,art = #{art,jdbcType=INTEGER}
+			</if>
+			<if test="economy != 0" >
+				,economy = #{economy,jdbcType=INTEGER}
+			</if>
+			<if test="literature != 0" >
+				,literature = #{literature,jdbcType=INTEGER}
+			</if>
+			<if test="language != 0" >
+				,language = #{language,jdbcType=INTEGER}
+			</if>
+			<if test="sport != 0" >
+				,sport = #{sport,jdbcType=INTEGER}
+			</if>
+			<if test="innovation != 0" >
+				,innovation = #{innovation,jdbcType=INTEGER}
+			</if>
+		</set>
+		
+		where stdid = #{stdid,jdbcType=INTEGER}
+  </update>
+</mapper>

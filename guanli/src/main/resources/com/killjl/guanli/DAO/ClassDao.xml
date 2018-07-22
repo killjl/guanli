@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.killjl.guanli.DAO.ClassDao">
+    <sql id="table">class</sql>
+    <sql id="selectFields">id,classname,department,prefercount,point,tcrname,time,place,year,major,testtime,classid,status
+    </sql>
+    <select id="selectClass" resultType="com.killjl.guanli.model.Class">
+        SELECT
+        <include refid="selectFields"/>
+        FROM
+        <include refid="table"/>
+        WHERE id > 0
+        <if test="classname != null">
+            AND classname like concat('%',concat( #{classname,jdbcType=VARCHAR},'%'))
+        </if>
+        <if test="department != null">
+            AND department like concat('%',concat( #{department,jdbcType=VARCHAR},'%'))
+        </if>
+        <if test="point != 0">
+            AND point = #{point,jdbcType=NUMERIC} 
+        </if>
+        <if test="tcrname != null">
+            AND tcrname like concat('%',concat( #{tcrname,jdbcType=VARCHAR},'%'))
+        </if>
+        <if test="time != null">
+            AND time like concat('%',concat( #{time,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="place != null">
+            AND place like concat('%',concat( #{place,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="year != null">
+            AND year like concat('%',concat( #{year,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="major != null">
+            AND major like concat('%',concat( #{major,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="testtime != null">
+            AND testtime like concat('%',concat( #{testtime,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="classid != null">
+            AND classid like concat('%',concat( #{classid,jdbcType=VARCHAR},'%'))
+        </if>
+		<if test="status != 0">
+			AND status = #{status,jdbcType=NUMERIC}
+		</if>
+		
+        ORDER BY id DESC
+		
+    </select>
+</mapper>

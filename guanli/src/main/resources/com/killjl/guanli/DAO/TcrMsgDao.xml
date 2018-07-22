@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.killjl.guanli.DAO.TcrMsgDao">
+    <sql id="table">tcrmsg</sql>
+    <sql id="selectFields">id,name,sex,college,phone,userid
+    </sql>
+    <select id="selectTcrMsg" resultType="com.killjl.guanli.model.Tcrmsg">
+        SELECT
+        <include refid="selectFields"/>
+        FROM
+        <include refid="table"/>
+		
+        WHERE id > 0
+		
+		<if test="userid != 0">
+			AND userid = #{userid,jdbcType=NUMERIC}
+		</if>
+		
+        <if test="name != null">
+            AND name like concat('%',concat( #{name,jdbcType=VARCHAR},'%'))
+        </if>
+		
+        <if test="sex != null">
+            AND sex like concat('%',concat( #{sex,jdbcType=VARCHAR},'%'))
+        </if>
+		
+		
+        <if test="college != null">
+            AND college like concat('%',concat( #{college,jdbcType=VARCHAR},'%'))
+        </if>
+		
+		
+		<if test="phone != 0">
+            AND phone = #{phone,jdbcType=NUMERIC}
+        </if>
+		
+		
+        ORDER BY id DESC
+		
+    </select>
+</mapper>

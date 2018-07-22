@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学分情况</title>
+<link rel="stylesheet" type="text/css" href="/styles/css.css" />
+<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+</head>
+<body>
+	<div id="pageAll">
+		<div class="page ">
+			<!-- 修改名称页面样式 -->
+			<div class="bacen">
+			
+				<div class="bbD">
+					&nbsp;&nbsp;&nbsp;&nbsp;用户帐号：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${user.userid}"></span></div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;用户名称：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${user.name}"></span></div>
+				
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;总学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.sum}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[0]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;必修学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.major}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[1]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+				
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;选修学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.minor}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[2]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;艺术修养学分：
+					<span th:text="${point.art}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[3]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;经管法学分：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.economy}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[4]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;文史哲学分：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.literature}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[5]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;外语学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.language}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[6]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;体育学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.sport}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[7]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+				<div class="bbD" >
+				&nbsp;&nbsp;&nbsp;&nbsp;创新学分：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${point.innovation}"></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;总共需修：&nbsp;&nbsp;&nbsp;&nbsp;
+					<span th:text="${standard[8]}"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;学分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</div>
+					
+					
+				<div class="bbD" ></div>
+				<div class="bbD" ></div>
+				<div class="bbD" ></div>
+				<div class="bbD" ></div>
+				<div class="bbD" ></div>
+				<div class="bbD" ></div>
+			</div>
+
+			<!-- 修改名称页面样式end -->
+		</div>
+	</div>
+</body>
+</html>
